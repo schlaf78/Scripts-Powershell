@@ -12,10 +12,10 @@
 }
 
 # Output header
-"D:\HR-департамент" | Out-File -FilePath D:\filesize.txt -Encoding UTF8
+"D:\<FOLDER>" | Out-File -FilePath D:\filesize.txt -Encoding UTF8
 
 # Get direct subfolders
-$subfolders = Get-ChildItem -Path "D:\HR-департамент" -Directory
+$subfolders = Get-ChildItem -Path "D:\<FOLDER>" -Directory
 
 foreach ($folder in $subfolders) {
     $sizeMB = Get-Size $folder.FullName

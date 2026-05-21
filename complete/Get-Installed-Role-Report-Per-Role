@@ -1,0 +1,24 @@
+#This scvcript allows to  check if the specific  servers  have  specific role i nstalled
+#below we are checking  for File Server REsource Manager status fon all fileserver fs-1..fs-32
+
+$servers = 1..32 | ForEach-Object { "fs-$_" }
+
+$result = foreach ($server in $servers) {
+
+    try {
+        $feature = Get-WindowsFeature -Name FS-Resource-Manager -ComputerName $server -ErrorAction Stop
+
+        [PSCustomObject]@{
+            Server        = $server
+            FSRMInstalled = $feature.Installed
+        }
+    }
+    catch {
+        [PSCustomObject]@{
+            Server        = $server
+            FSRMInstalled = "Unreachable"
+        }
+    }
+}
+
+$result | Format-Table -AutoSize

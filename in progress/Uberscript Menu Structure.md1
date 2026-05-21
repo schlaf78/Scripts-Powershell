@@ -1,0 +1,22 @@
+# Uberscript Menu Structure
+
+## Main Menu
+
+```text
+Script
+│
+├── User Management
+│   ├── Create User (Regular Account)
+│   ├── Create User (ADM Account)
+│   └── Create User (Support Account)
+│
+├── Folders Management
+│   ├── Create Folder (Drive R)
+│   ├── Create Folder (Drive O)
+│   └── Folder Report
+│
+└── Reports
+    └── Folder Report
+        ├── AD Single Group
+        ├── Confluence Group Pack
+        └── Jira Group Pack

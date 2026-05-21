@@ -1,5 +1,5 @@
 ﻿param (
-    [string]$FilePath = "\\holding.melonfashion.ru\share\SPB.Office\Новые проекты\Zarina\Экспансия\ZARINA 2025+++.xlsx"
+    [string]$FilePath = "\\<FULL PATH>\File.xlsx"
 )
 
 Import-Module ActiveDirectory
